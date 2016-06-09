@@ -9,8 +9,15 @@ public class JastelHelper {
 
   private static final String CURRENCY_CODE = "360";
 
-  public static void createInquiryRequest(String nop, String thnPajak) {
-    String panjangData = "022";
-    String processingCode = "360000";   
+  public static ISOMsg createInquiryRequest(String nop, String thnPajak) {
+    try {
+      String panjangData = "022";
+      String processingCode = "360000";   
+
+      ISOMsg reqMsg = new ISOMsg();
+      reqMsg.setMTI(ConstantsData.MTI_TRS_REQ);
+    } catch(ISOException ex) {
+      Logger.getLogger(JastelHelper.class.getName()).log(Level.Severe, 
+    }
   } 
 }
